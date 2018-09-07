@@ -2,11 +2,23 @@ import React, { Component } from 'react';
 import './TodoInput.css'
 
 class TodoInput extends Component {
+	
+	constructor() {
+		super()
+		this.state = {
+			newTask:{}
+		}
+	}
  
 	onClick(){
 		if (this.textInput.value){
-  		console.log(this.textInput.value)
-  	}
+  			this.setState({newTask:{
+  				//id: add it later
+  				title: this.textInput.value
+  			}}, () => {
+  				this.props.addTask(this.state.newTask)
+  			})
+  		}
   	}
 
   render() {

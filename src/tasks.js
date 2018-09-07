@@ -1,4 +1,4 @@
-const tasks = [
+const mockTasks = [
 	{
 		id: 1,
 		title: "task1"
@@ -15,4 +15,4 @@ const tasks = [
 	}
 ]
 
-export default tasks
+export default mockTasks
