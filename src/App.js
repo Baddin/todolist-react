@@ -19,11 +19,20 @@ class App extends Component {
     tasks.push(task)
     this.setState({tasks: tasks})
   }
+
+  handleDeleteTask(id){
+    let tasks = this.state.tasks;
+    let index = tasks.findIndex(x => x.id === id)
+    tasks.splice(index, 1)
+    this.setState({tasks: tasks})
+  }
+
   render() {
     return (
-      <div className="App">
-        <TodoInput addTask = {this.handleAddTask.bind(this)}/>
-        <TodoList tasklist = {this.state.tasks}/>
+      <div className="App container">
+        <TodoInput addTask = {this.handleAddTask.bind(this)} />
+        <hr/>
+        <TodoList tasklist = {this.state.tasks} onDelete={this.handleDeleteTask.bind(this)}/>
       </div>
     );
   }

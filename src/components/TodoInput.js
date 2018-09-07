@@ -9,6 +9,8 @@ class TodoInput extends Component {
 			newTask:{}
 		}
 	}
+
+
  
 	onClick(){
 		if (this.textInput.value){
@@ -18,6 +20,7 @@ class TodoInput extends Component {
   			}}, () => {
   				this.props.addTask(this.state.newTask)
   			})
+  			this.textInput.value = ''
   		}
   	}
 
